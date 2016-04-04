@@ -47,7 +47,7 @@ function getFullPath(path, calledFrom) {
 
   var isLocalModule = /^\.{1,2}[/\\]/.test(path);
   if (!isLocalModule) {
-    return path;
+    return Module._resolveFilename(path);
   }
 
   var localModuleName = join(dirname(calledFrom), path);
